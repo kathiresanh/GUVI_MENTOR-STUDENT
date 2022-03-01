@@ -22,9 +22,9 @@ app.post("/createstudent",async function(req,res){
         if(user==null){
             let user = await db.collection("GuviStudent").insertOne(req.body)
             connection.close();
-            res.json({message:"student added"})
+            res.json({message:"registered sucessfully"})
         }else{
-            res.json({message:"student email already added"})
+            res.json({message:"email already registered"})
         }
     } catch (error) {
         res.json({message:"something wrong"})
